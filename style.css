@@ -1,0 +1,234 @@
+/* Genel stiller */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f0f0; /* Arka plan rengi */
+}
+
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.button img {
+    width: 200px; /* Resmin genişliği */
+    height: auto; /* Otomatik yükseklik ayarı */
+    filter: drop-shadow(10px 10px 20px black);
+}
+
+.button:hover {
+    transform: scale(1.1); /* Büyütme efekti */
+}
+
+.social-buttons, .phone-button {
+    margin-bottom: 20px;
+}
+
+.social-button, .phone-button a {
+    display: inline-block;
+    margin: 0 10px;
+    width: 60px; /* İkon genişliği */
+    height: 60px; /* İkon yüksekliği */
+    font-size: 24px; /* İkonun kendisi */
+    line-height: 60px; /* İkon merkezlemesi */
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    background-size: cover;
+    transition: color 0.3s ease;
+}
+
+.social-button::before, .phone-button a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Overlay color */
+    border-radius: 7px;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.social-button:hover::before, .phone-button a:hover::before {
+    transform: scale(1);
+}
+
+/* WhatsApp button specific styles */
+.social-button.whatsapp, .phone-button a.whatsapp {
+    background-image: url('Fotoğraflar/whatsapp.png');
+}
+
+.social-button.whatsapp::before, .phone-button a.whatsapp::before {
+    background-color: rgba(37, 211, 102); /* Adjust color and opacity */
+}
+
+.social-button.whatsapp:hover, .phone-button a.whatsapp:hover {
+    color: #007BFF;
+}
+
+/* Instagram button specific styles */
+.social-button.instagram {
+    background-image: url('/Fotoğraflar/instagram.png');
+}
+
+.social-button.instagram::before {
+    background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+.social-button.instagram:hover {
+    color: #FF00BF;
+}
+
+/* Facebook button specific styles */
+.social-button.facebook {
+    background-image: url('Fotoğraflar/facebook.png');
+}
+
+.social-button.facebook::before {
+    background-color: rgba(24, 119, 242); /* Adjust color and opacity */
+}
+
+.social-button.facebook:hover {
+    color: #3B5998;
+}
+
+.map {
+    margin-bottom: 20px;
+}
+
+.phone-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.phone-button a img {
+    vertical-align: middle; /* İkonü metnin ortasına hizalama */
+}
+
+.phone-button a span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px; /* İkon ile metin arasındaki boşluk */
+}
+
+.phone-button a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Overlay rengi */
+    border-radius: 7px;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.phone-button a:hover::before {
+    transform: scale(1); /* Overlay büyüme efekti */
+}
+
+.phone-button a:hover {
+    background-color: rgb(170, 74, 68);
+}
+
+
+.add-review {
+    display: none; /* Yorum ekleme bölümünü gizleyelim */
+}
+
+.reviews {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf arka plan */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reviews h2 {
+    margin-top: 0;
+}
+
+.review {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review strong {
+    font-size: 18px;
+}
+
+.review p {
+    margin: 5px 0;
+}
+
+.background-video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(2px); /* Bulanık efekti azaltabilirsiniz */
+    z-index: 0; /* Arkaplanda kalması için z-index düşük olmalı */
+}
