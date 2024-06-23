@@ -97,7 +97,7 @@ body {
 
 /* Instagram button specific styles */
 .social-button.instagram {
-    background-image: url('./Fotoğraflar/instagram.png');
+    background-image: url('/Fotoğraflar/instagram.png');
 }
 
 .social-button.instagram::before {
